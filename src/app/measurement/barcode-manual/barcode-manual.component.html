@@ -1,1 +1,16 @@
-<p>barcode-manual works!</p>
+<div class="row p-0 container">
+  <div class="col-sm-12 col-md-2 col-xs-12 p-0 position-relative">
+    <app-sub-header></app-sub-header>
+  </div>
+  <div class="col-sm-12 col-md-10 col-xs-12 p-2 text-center sub-main">
+    <div>
+      <app-message></app-message>
+    </div>
+    <h3>Barcode Data</h3>
+    <hr>
+    <div class="loader" *ngIf="!success">Loading...</div>
+    <div class="p-3 text-left" *ngIf="success">
+      <app-barcode-item [barcode]="barcodeData" [employees]="employees" [selected]="selected"></app-barcode-item>
+    </div>
+  </div>
+</div>
