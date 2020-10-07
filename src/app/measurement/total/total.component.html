@@ -1,1 +1,34 @@
-<p>total works!</p>
+<div class="row p-0 container">
+  <div class="col-sm-12 col-md-2 col-xs-12 p-0 position-relative">
+    <app-sub-header></app-sub-header>
+  </div>
+  <div class="col-sm-12 col-md-10 col-xs-12 p-2 sub-main">
+    <app-message></app-message>
+    <div class="loader" *ngIf="!fetched">Loading...</div>
+    <div *ngIf="fetched">
+      <p class="text-center font-weight-bold">TOTAL</p>
+      <table class="mx-auto p-2 w-100 my-2">
+        <tr class="p-2 border border-dark">
+          <th class="p-2 border border-dark">Employee</th>
+          <th class="p-2 border border-dark">Boxes</th>
+          <th class="p-2 border border-dark">Amount (kg)</th>
+        </tr>
+        <tr class="p-2 border border-dark" *ngFor="let employee of reportData">
+          <td class="p-2 border border-dark">{{employee.name}}</td>
+          <td class="p-2 border border-dark">{{employee.boxes}}</td>
+          <td class="p-2 border border-dark">{{employee.amount}}</td>
+        </tr>
+        <tr class="p-2 border border-dark">
+          <th class="p-2 border border-dark bg-dark">Total</th>
+          <th class="p-2 border border-dark bg-secondary">{{boxes}}</th>
+          <th class="p-2 border border-dark bg-secondary">{{total}}</th>
+        </tr>
+      </table>
+    </div>
+    <div class="text-right p-3">
+      <a class="btn btn-secondary" routerLink="/measure">BACK</a>
+    </div>
+
+  </div>
+
+</div>
