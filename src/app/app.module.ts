@@ -14,6 +14,11 @@ import { EmployeesComponent } from './employees/employees.component';
 import { EmployeeComponent } from './employees/employee/employee.component';
 import { HeaderComponent } from './header/header.component';
 import { HelpComponent } from './help/help.component';
+import { BarcodeComponent } from './measurement/barcode/barcode.component';
+import { BarcodeManualComponent } from './measurement/barcode-manual/barcode-manual.component';
+import { SubHeaderComponent } from './measurement/sub-header/sub-header.component';
+import { TotalComponent } from './measurement/total/total.component';
+import { Barcode } from './measurement/barcode.barcode-item/barcode.barcode-item.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +34,12 @@ import { HelpComponent } from './help/help.component';
     EmployeesComponent,
     EmployeeComponent,
     HeaderComponent,
-    HelpComponent
+    HelpComponent,
+    BarcodeComponent,
+    BarcodeManualComponent,
+    SubHeaderComponent,
+    TotalComponent,
+    Barcode.BarcodeItemComponent
   ],
   imports: [
     BrowserModule
