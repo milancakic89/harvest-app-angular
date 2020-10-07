@@ -1,1 +1,35 @@
-<p>base works!</p>
+<div class="row p-0 container">
+  <div class="col-sm-12 col-md-2 col-xs-12 p-0 position-relative">
+    <app-header></app-header>
+  </div>
+  <div class="col-sm-12 col-md-10 col-xs-12 p-2 text-center sub-main">
+    <div class=" mx-auto p-2 message">
+      <app-message></app-message>
+    </div>
+    <div class="table-wrapper">
+      <table class="w-100 table-main">
+        <tr class="table-sticky">
+          <th class="pl-1 table-h">Box (Barcode)</th>
+          <th class="pl-1 table-h">Variety</th>
+          <th class="pl-1 table-h">Sector</th>
+          <th class="pl-1 table-h">Employee</th>
+          <th class="pl-1 table-h">Amount (kg)</th>
+          <th class="pl-1 table-h hide-tr-mobile">Date</th>
+          <th class="pl-1 table-h">Supervizor</th>
+        </tr>
+
+        <tr class="border border-secondary" *ngFor="let boxItem of boxes">
+          <td class="border border-secondary pl-1 table-h">{{ boxItem.box }}</td>
+          <td class="border border-secondary pl-1 table-h">{{ boxItem.variety }}</td>
+          <td class="border border-secondary pl-1 table-h">{{ boxItem.sector }}</td>
+          <td class="border border-secondary pl-1 table-h">{{ boxItem.employee }}</td>
+          <td [ngclass]="boxItem.amount > 0 ? 'font-weight-bold' : ''" class="border border-secondary pl-1 table-h">
+            {{ boxItem.amount }}</td>
+          <td class="border border-secondary pl-1 table-h hide-tr-mobile">{{ boxItem.date }}</td>
+          <td class="border border-secondary pl-1 table-h">{{ boxItem.supervizor }}</td>
+        </tr>
+
+      </table>
+    </div>
+  </div>
+</div>

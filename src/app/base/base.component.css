@@ -1,0 +1,36 @@
+.base {
+  height: 100%;
+  overflow: auto;
+  margin: 0 auto;
+}
+
+
+
+table th {
+  position: sticky;
+  padding: 5px;
+  height: 35px;
+  top: 0px;
+  left: 0;
+  background-color: rgb(32, 125, 248);
+}
+
+table tr:nth-child(2) {
+  margin-top: 50px;
+}
+
+table tr:nth-child(odd) {
+  background-color: rgb(209, 208, 207);
+}
+
+
+@media (max-width: 768px) {
+  .table-main {
+    white-space: wrap;
+  }
+
+  .hide-tr-mobile {
+    display: none;
+  }
+
+}
