@@ -1,1 +1,36 @@
-<p>header works!</p>
+<div class="header bg-primary pt-2 m-0" *ngIf="isLogged">
+
+  <div class=" ml-3 " (click)="toggleMenu()" [ngClass]="!menuOpened ? 'menu-collapsed' : 'menu-opened'">
+    <span class="colapse-menu" #menu></span>
+  </div>
+  <br>
+  <ul class="list-group list-group-vertical p-0 m-0" [ngClass]="menuOpened ? 'opened' : 'closed'">
+    <br>
+    <li class="list-group-item bg-primary px-0" routerLinkActive="active__route" [routerLink]="['/harvest']">
+      <a class="list-group-link text-light text-decoration-none">Harvest</a>
+    </li>
+    <li class="list-group-item bg-primary px-0" routerLinkActive="active__route" [routerLink]="['/base']">
+      <a class="list-group-link text-light text-decoration-none">Base</a>
+    </li>
+    <li class="list-group-item bg-primary px-0" routerLinkActive="active__route" [routerLink]="['/report']">
+      <a class="list-group-link text-light text-decoration-none">Reports</a>
+    </li>
+    <li class="list-group-item bg-primary px-0" routerLinkActive="active__route" [routerLink]="['/analyses']">
+      <a class="list-group-link text-light text-decoration-none">Analyses</a>
+    </li>
+    <li class="list-group-item bg-primary px-0" routerLinkActive="active__route" [routerLink]="['/employees']">
+      <a class="list-group-link text-light text-decoration-none">Employees</a>
+    </li>
+    <li class="list-group-item bg-primary px-0" routerLinkActive="active__route" [routerLink]="['/add']">
+      <a class="list-group-link text-light text-decoration-none">Add</a>
+    </li>
+    <li class="list-group-item bg-primary px-0" routerLinkActive="active__route" [routerLink]="['/help']">
+      <a class="list-group-link text-light text-decoration-none">Help</a>
+    </li>
+    <li class="list-group-item bg-warning px-0" routerLinkActive="active__route" (click)="logout()">
+      <a class="list-group-link text-light text-decoration-none">Logout</a>
+    </li>
+  </ul>
+
+</div>
+<div class="mb-3"></div>
