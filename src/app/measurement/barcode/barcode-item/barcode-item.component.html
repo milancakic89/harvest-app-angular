@@ -1,0 +1,24 @@
+<form (ngSubmit)="updateBarcode(f)" #f="ngForm" *ngIf="selected !=null">
+  <span>Amount </span>
+  <input type="number" pattern="^\d+\.?\d*$" name="amount" class="barcode-item m-3" ngModel="{{barcode?.box.amount}}"
+    required />
+  <button class="btn btn-primary mb-1" type="submit" [disabled]="!f.valid">Update</button>
+  <input type="hidden" name="id" ngModel="{{barcode.box._id}}" />
+  <input type="hidden" name="line" ngModel="{{barcode.box.line}}" />
+  <input type="hidden" name="sector" ngModel="{{barcode.box.sector}}" />
+  <p>Current: <span class="font-weight-bold">{{selected}}</span></p>
+  <span>Change:</span><select name="employee" class="m-0 ml-1" ngModel="{{selected}}" required>
+    <option value="{{selected}}" selected>{{selected}}</option>
+    <option value="{{employee.name}}" *ngFor="let employee of employees">{{employee.name}}</option>
+  </select>
+</form>
+<div *ngIf="selected !=null" class="mt-2">
+  <h4>Details</h4>
+  <hr>
+  <p>Barcode: <span class="font-weight-bold">{{barcode?.box.box}}</span></p>
+  <p>Employee: <span class="font-weight-bold">{{barcode?.box.employee}}</span></p>
+  <p>Sector: <span class="font-weight-bold">{{barcode?.box.sector}}</span></p>
+  <p>Variety: <span class="font-weight-bold">{{barcode?.box.variety}}</span></p>
+  <p>Amount: <span class="font-weight-bold">{{barcode?.box.amount}}</span></p>
+  <a class="btn btn-secondary mb-2 ml-0 p-2 text-light" (click)="goBack()" *ngIf="currentPath == '/measure'">Back</a>
+</div>

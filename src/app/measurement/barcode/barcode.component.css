@@ -1,0 +1,36 @@
+.barcode-scan {
+  height: 80px;
+  text-transform: uppercase;
+  border: 3px solid black;
+  font-size: 2em;
+  margin-top: 5px;
+}
+
+.barcode-btn {
+  height: 80px;
+  padding: 20px;
+  margin-top: -15px;
+  margin-left: 10px;
+}
+
+.barcode-message {
+  height: 40px;
+  padding: 8px;
+}
+
+@media (max-width: 768px) {
+  .barcode-scan {
+    height: 50px;
+    text-transform: uppercase;
+    border: 2px solid black;
+    font-size: 1.5em;
+    margin-top: 5px;
+  }
+
+  .barcode-btn {
+    height: 50px;
+    padding: 10px;
+    margin-top: -12px;
+    margin-left: 10px;
+  }
+}

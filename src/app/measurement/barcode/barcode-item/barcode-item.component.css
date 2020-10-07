@@ -1,0 +1,5 @@
+@media(max-width: 450px) {
+  .barcode-item {
+    max-width: 100px;
+  }
+}

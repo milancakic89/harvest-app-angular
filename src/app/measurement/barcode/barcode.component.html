@@ -1,1 +1,20 @@
-<p>barcode works!</p>
+<div class="row p-0 container">
+  <div class="col-sm-12 col-md-2 col-xs-12 p-0 position-relative">
+    <app-sub-header></app-sub-header>
+  </div>
+  <div class="col-sm-12 col-md-10 col-xs-12 p-2 text-center sub-main">
+    <app-message></app-message>
+    <h3>Scan barcode</h3>
+    <hr>
+    <form (ngSubmit)="searchBarcode(f)" #f="ngForm">
+
+      <input class="w-75 barcode-scan mb-3" value="value" autocomplete="off" id="barcode" ngModel name="barcode"
+        type="text" autofocus />
+      <button class="barcode-btn btn btn-primary" type="submit">Find</button>
+    </form>
+    <hr>
+    <div class="p-3 text-left" *ngIf="success">
+      <app-barcode-item [barcode]="barcodeData" [employees]="employees" [selected]="selected"></app-barcode-item>
+    </div>
+  </div>
+</div>

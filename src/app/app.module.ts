@@ -19,6 +19,7 @@ import { BarcodeManualComponent } from './measurement/barcode-manual/barcode-man
 import { SubHeaderComponent } from './measurement/sub-header/sub-header.component';
 import { TotalComponent } from './measurement/total/total.component';
 import { Barcode } from './measurement/barcode.barcode-item/barcode.barcode-item.component';
+import { BarcodeItemComponent } from './measurement/barcode/barcode-item/barcode-item.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { Barcode } from './measurement/barcode.barcode-item/barcode.barcode-item
     BarcodeManualComponent,
     SubHeaderComponent,
     TotalComponent,
-    Barcode.BarcodeItemComponent
+    Barcode.BarcodeItemComponent,
+    BarcodeItemComponent
   ],
   imports: [
     BrowserModule
