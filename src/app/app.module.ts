@@ -4,12 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { SignupComponent } from './signup/signup.component';
+import { MeasurementComponent } from './measurement/measurement.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginFormComponent,
-    SignupComponent
+    SignupComponent,
+    MeasurementComponent
   ],
   imports: [
     BrowserModule
