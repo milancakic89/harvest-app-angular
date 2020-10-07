@@ -13,6 +13,7 @@ import { BaseComponent } from './base/base.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { EmployeeComponent } from './employees/employee/employee.component';
 import { HeaderComponent } from './header/header.component';
+import { HelpComponent } from './help/help.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { HeaderComponent } from './header/header.component';
     BaseComponent,
     EmployeesComponent,
     EmployeeComponent,
-    HeaderComponent
+    HeaderComponent,
+    HelpComponent
   ],
   imports: [
     BrowserModule
