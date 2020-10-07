@@ -1,5 +1,5 @@
-import { Component, OnChanges } from '@angular/core';
-import { Service } from './app.service';
+import { Component} from '@angular/core';
+
 
 @Component({
   selector: 'app-root',

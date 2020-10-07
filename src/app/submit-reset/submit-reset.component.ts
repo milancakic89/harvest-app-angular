@@ -5,8 +5,8 @@ import { BASE_URL } from '../base-url';
 
 @Component({
   selector: 'app-reseting',
-  templateUrl: './reseting.component.html',
-  styleUrls: ['./reseting.component.css']
+  templateUrl: './submit-reset.component.html',
+  styleUrls: ['./submit-reset.component.css']
 })
 export class ResetingComponent implements OnInit {
   submiting = false;

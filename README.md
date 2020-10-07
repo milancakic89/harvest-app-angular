@@ -1,27 +1,39 @@
-# HarvestAppAngular
+## Harvest App
+Created from Harvest App repository
+Application is separated into two parts to reduce complexity.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.3.
+### Major purpose of the application is to track:
+*Where employees are farming (sector)
+*Which variety are they farming
+*How mush did they farm in total
 
-## Development server
+### Proccess: FIRST PART
+Print barcodes with metadata (sector, employee, variety), and attach them to some boxes or whatever they are farming to. Once "boxes" are farmed, scan barcodes (SECOND PART OF THE APPLICATION), and enter the weight. Person who scans the barcodes don't need to track which employee farmed them, because barcodes are holding those informations.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## FIRST PART FEATURES
+### Adding:
+*employees *variety *supervizors
 
-## Code scaffolding
+Logging with supervizor account allows you to use second part of aplication
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Printing barcodes
+### Retrieving all barcodes data
+### Removing employees
+To remove the employee, you must first transfer "boxes" (barcodes) to some other employee. If you dont have any, you need to create one, otherwise you would end up with printed barcodes that dont belong to anyone, and yet physically available.
 
-## Build
+### Tracking data for barcodes with weight measured
+### Closing day
+### Retrieving data for any date that was closed
+### Analyses
+### Showing the total for individual sector
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## SECOND PART
+To be able to use second part, you must login with supervizor account created in FIRST PART.
 
-## Running unit tests
+### Features
+### Display barcodes
+### Allows entering the weight of "boxes"
+### Showing total for each employee.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### APP AVAILABLE AT:
+https://farming-fc8ba.web.app/

@@ -1,1 +1,486 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+
+}
+
+html {
+  overflow: hidden;
+}
+
+.registration {
+  position: relative;
+  margin: 0 auto !important;
+  width: 100%;
+  max-width: 1300px;
+  padding: 0 20px 20px 20px;
+  text-align: center;
+  min-height: 650px;
+  max-height: 100vh;
+  height: auto;
+}
+
+.login {
+  max-width: 500px;
+  min-width: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 85% !important;
+  padding-bottom: 20px;
+  transform: translateY(-50%) translateX(-50%) !important;
+  min-height: 300px;
+  border-radius: 10px;
+}
+
+.radius {
+  border-radius: 10px 10px 0px 0px;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  position: relative;
+}
+
+.back-image {
+  min-height: 100vh;
+  opacity: 0.9;
+  position: absolute;
+  height: 100vh;
+  top: 0;
+  z-index: -1;
+  left: 0;
+}
+
+.main {
+  background-color: rgba(255, 255, 255, 0);
+  width: 100%;
+  overflow: hidden;
+  max-width: 1300px;
+  max-height: 700px;
+  height: auto;
+
+}
+
+.sub-main {
+  background-color: rgb(247, 247, 247);
+  margin-top: 0px;
+  min-height: 640px;
+  max-height: 700px;
+  overflow-y: auto;
+  padding-bottom: 100px;
+}
+
+.container {
+  max-width: 1300px;
+  width: 100%;
+  text-align: left;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.header {
+  width: 100%;
+  min-height: 700px;
+  max-height: 700px;
+  padding: 0;
+  margin-top: 0;
+  text-align: center;
+}
+
+
+input,
+select {
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: transparent;
+  padding: 5px;
+  font-weight: bold;
+  border: 1px solid rgb(215, 197, 223);
+}
+
+.table-h {
+  min-width: 80px;
+
+}
+
+td,
+th {
+  font-size: 1.3rem;
+}
+
+.row {
+  margin: 0 auto;
+}
+
+input:focus,
+select:focus {
+  outline: none !important;
+
+}
+
+.scrolling {
+  max-height: 650px;
+  overflow-y: auto;
+}
+
+.farming-app {
+  position: relative;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0 auto;
+  height: 690px;
+  max-width: 1200px;
+  width: 95%;
+}
+
+.button-loader {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  margin: 0 auto;
+  position: relative;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(182, 49, 240) !important;
+  opacity: 0.5;
+  /* Firefox */
+  font-weight: 400;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: rgb(182, 49, 240) !important;
+  opacity: 0.5;
+  /* Firefox */
+  font-weight: 400;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: rgb(182, 49, 240) !important;
+  opacity: 0.5;
+  /* Firefox */
+  font-weight: 400;
+}
+
+.message {
+  height: 60px;
+}
+
+.button-loader {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  margin: 0 auto;
+  position: relative;
+}
+
+.loader,
+.loader:after {
+  border-radius: 50%;
+  width: 10em;
+  height: 10em;
+}
+
+.loader {
+  margin: 60px auto;
+  font-size: 10px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 1.1em solid rgb(32, 125, 248);
+  border-right: 1.1em solid rgb(32, 125, 248);
+  border-bottom: 1.1em solid rgb(32, 125, 248);
+  border-left: 1.1em solid #ffffff;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear;
+}
+
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.loader-login,
+.loader-login:after {
+  border-radius: 50%;
+  width: 90%;
+  height: 90%
+}
+
+.loader-login {
+  font-size: 10px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  border-top: 3px solid rgb(32, 125, 248);
+  border-right: 3px solid rgb(32, 125, 248);
+  border-bottom: 3px solid rgb(32, 125, 248);
+  border-left: 3px solid #ffffff;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load 1.1s infinite linear;
+  animation: load 1.1s infinite linear;
+}
+
+@-webkit-keyframes load {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes load {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+table tr:nth-child(even) {
+  background-color: rgb(243, 243, 243);
+}
+
+td {
+  padding-top: 5px;
+}
+
+table th {
+  position: sticky;
+  padding: 5px;
+  height: 25px;
+  top: 0;
+  left: 0;
+  background-color: rgb(32, 125, 248);
+
+}
+
+.table-wrapper {
+  position: relative;
+  padding: 0px 10px;
+  max-height: 560px !important;
+  overflow-y: auto;
+
+}
+
+th {
+  border: 1px solid rgb(0, 0, 0);
+  color: #fff;
+}
+
+/* fixing defaulty scrollbar style*/
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #cfcece;
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(63, 62, 62);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(173, 92, 92);
+}
+
+@media(min-width: 50px) and (max-width: 768px) {
+  .main {
+    background-color: rgba(255, 255, 255, 0);
+    width: 100%;
+    overflow: hidden;
+    max-width: 1300px;
+    min-height: 710px;
+    height: auto;
+  }
+
+  .sub-main {
+    background-color: rgb(247, 247, 247);
+    max-height: calc(100vh - 55px);
+    min-height: 675px;
+    margin-top: 19px;
+    overflow-y: auto;
+  }
+
+  .app {
+    margin-top: 0;
+  }
+
+  .table-h {
+    min-width: 37px;
+
+  }
+
+  td,
+  th {
+    font-size: 0.6em;
+  }
+
+  .farming-app {
+    padding: 0;
+    top: 0;
+    width: 100%;
+  }
+
+}
+
+.col-md-2 {
+  flex: 100%;
+  width: 100%;
+  max-width: 100%;
+}
+
+.col-md-10 {
+  flex: 100%;
+  width: 100%;
+  max-width: 100%;
+}
+
+
+.body,
+html {
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+
+  .sub-main {
+    background-color: rgb(247, 247, 247);
+    max-height: 800px;
+    min-height: 675px;
+    height: 100vh;
+    margin-top: 0px;
+    overflow-y: auto;
+  }
+
+  .app {
+    margin-top: 0;
+  }
+
+  .col-md-2 {
+    flex: 100%;
+    width: 100%;
+    max-width: 20%;
+  }
+
+  .table-h {
+    min-width: 37px;
+
+  }
+
+  td,
+  th {
+    font-size: 0.9rem;
+  }
+
+  .col-md-10 {
+    flex: 100%;
+    width: 100%;
+    max-width: 80%;
+  }
+
+  .farming-app {
+    padding: 0;
+    top: 0;
+    width: 100%;
+  }
+}
+
+table {
+  border-bottom: 1px solid black;
+}
+
+@media (min-width: 767px) and (max-width: 768px) {
+
+  .sub-main {
+    background-color: rgb(247, 247, 247);
+    min-height: 675px;
+    margin-top: 19px;
+    overflow-y: auto;
+  }
+
+  .app {
+    margin-top: 0;
+  }
+
+  .table-h {
+    min-width: 37px;
+
+  }
+
+  td,
+  th {
+    font-size: 0.6em;
+  }
+
+  .farming-app {
+    padding: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  .col-md-2 {
+    flex: 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .col-md-10 {
+    flex: 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .main {
+    background-color: rgba(255, 255, 255, 0);
+    width: 100%;
+    overflow: hidden;
+    margin: 10px auto !important;
+    max-width: 1300px;
+    max-height: 710px;
+    height: auto;
+  }
+}
