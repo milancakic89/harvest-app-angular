@@ -6,6 +6,7 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { SignupComponent } from './signup/signup.component';
 import { MeasurementComponent } from './measurement/measurement.component';
 import { MessageComponent } from './message/message.component';
+import { AddComponent } from './add/add.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { MessageComponent } from './message/message.component';
     LoginFormComponent,
     SignupComponent,
     MeasurementComponent,
-    MessageComponent
+    MessageComponent,
+    AddComponent
   ],
   imports: [
     BrowserModule
