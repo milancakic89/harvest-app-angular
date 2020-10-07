@@ -23,6 +23,7 @@ import { BarcodeItemComponent } from './measurement/barcode/barcode-item/barcode
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ReportComponent } from './report/report.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { SubmitResetComponent } from './submit-reset/submit-reset.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     BarcodeItemComponent,
     NotFoundComponent,
     ReportComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    SubmitResetComponent
   ],
   imports: [
     BrowserModule
