@@ -1,1 +1,18 @@
-<p>analyses works!</p>
+<div class="row p-0 container">
+  <div class="col-sm-12 col-md-2 col-xs-12 p-0 position-relative">
+    <app-header></app-header>
+  </div>
+  <div class="col-sm-12 col-md-10 col-xs-12 p-2 text-left p-3 sub-main">
+    <div>
+      <h6>Sectors: <span class="h5 font-weight-bold">{{sectors?.length}}</span></h6>
+      <h6>Total: <span class="h5 font-weight-bold">{{total}}kg</span></h6>
+      <hr>
+    </div>
+    <div class="border border-secondary mt-3 text-left p-3 bg-light hite" *ngFor="let sector of sectors">
+      <h4>Sector: {{sector.sector}}</h4>
+      <hr>
+      <p>Boxes measured: <span class="h6 font-weight-bold">{{sector.boxes}}</span></p>
+      <p>Total: <span class="h6 font-weight-bold">{{sector.total}}</span> kg</p>
+    </div>
+  </div>
+</div>
