@@ -1,1 +1,29 @@
-<p>login-form works!</p>
+<div class="harvest-img">
+  <img src="assets/harvest-app.svg" />
+</div>
+<div class="registration">
+  <app-message></app-message>
+  <form class="login text-left w-50" (ngSubmit)="submit(f)" #f="ngForm">
+    <h3 class="m-0 mb-2 text-light text-left radius mb-2">Login to your account</h3><br>
+    <p class="text-login text-light p-0 m-0">Email: </p>
+    <input type="email" class="ml-1" ngModel name="email" required
+      pattern='^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$'><br>
+    <p class="text-light text-login p-0 m-0">Password: </p>
+    <input type="password" class="ml-1" required ngModel name="password">
+    <div class="text-right">
+      <button type="submit" class="btn btn-sign m-3" *ngIf="showLoad == false" [disabled]="!f.valid">Login</button><br>
+    </div>
+    <div class="text-center" *ngIf="showLoad">
+      <div class="button-loader">
+        <div class="loader-login"></div>
+      </div>
+    </div>
+
+    <br>
+    <p class="bg-light w-100 line"></p>
+    <div class="text-center">
+      <a href="#" routerLink="/signup" class="link-yellow">Create new account</a><br>
+      <span class="mb-2 text-light"> Forgot password? </span> <a routerLink="/reset" class="link-yellow">Click Here</a>
+    </div>
+  </form>
+</div>
