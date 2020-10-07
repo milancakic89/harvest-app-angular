@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { SignupComponent } from './signup/signup.component';
 import { MeasurementComponent } from './measurement/measurement.component';
+import { MessageComponent } from './message/message.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginFormComponent,
     SignupComponent,
-    MeasurementComponent
+    MeasurementComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule
