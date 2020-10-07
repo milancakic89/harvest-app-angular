@@ -1,1 +1,4 @@
-<p>message works!</p>
+<div *ngIf="message">
+  <p class="p-2 text-center text-light" [ngClass]="success == true ? 'bg-success text-light' : 'bg-danger text-light'">
+    {{message}}</p>
+</div>

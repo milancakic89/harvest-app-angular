@@ -20,6 +20,7 @@ import { SubHeaderComponent } from './measurement/sub-header/sub-header.componen
 import { TotalComponent } from './measurement/total/total.component';
 import { Barcode } from './measurement/barcode.barcode-item/barcode.barcode-item.component';
 import { BarcodeItemComponent } from './measurement/barcode/barcode-item/barcode-item.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { BarcodeItemComponent } from './measurement/barcode/barcode-item/barcode
     SubHeaderComponent,
     TotalComponent,
     Barcode.BarcodeItemComponent,
-    BarcodeItemComponent
+    BarcodeItemComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule
