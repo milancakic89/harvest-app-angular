@@ -21,6 +21,7 @@ import { TotalComponent } from './measurement/total/total.component';
 import { Barcode } from './measurement/barcode.barcode-item/barcode.barcode-item.component';
 import { BarcodeItemComponent } from './measurement/barcode/barcode-item/barcode-item.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ReportComponent } from './report/report.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     TotalComponent,
     Barcode.BarcodeItemComponent,
     BarcodeItemComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ReportComponent
   ],
   imports: [
     BrowserModule

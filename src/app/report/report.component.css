@@ -1,0 +1,20 @@
+table tr:first-child {
+  background-color: rgb(32, 125, 248);
+  color: #fff;
+  max-height: 620px;
+  overflow-y: auto;
+}
+
+.w-70px {
+  width: 70px;
+}
+
+.find {
+  margin-top: -5px;
+}
+
+@media(max-width: 560px) {
+  table {
+    white-space: nowrap;
+  }
+}
