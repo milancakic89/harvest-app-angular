@@ -8,6 +8,8 @@ import { MeasurementComponent } from './measurement/measurement.component';
 import { MessageComponent } from './message/message.component';
 import { AddComponent } from './add/add.component';
 import { HarvestComponent } from './harvest/harvest.component';
+import { AnalysesComponent } from './analyses/analyses.component';
+import { BaseComponent } from './base/base.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { HarvestComponent } from './harvest/harvest.component';
     MeasurementComponent,
     MessageComponent,
     AddComponent,
-    HarvestComponent
+    HarvestComponent,
+    AnalysesComponent,
+    BaseComponent
   ],
   imports: [
     BrowserModule
