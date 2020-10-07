@@ -1,0 +1,91 @@
+input {
+  width: 100%;
+  max-width: 370px;
+  background-color: #fff;
+  min-width: 150px;
+  padding-left: 15px;
+  border-radius: 25px;
+  margin: 10px 0px;
+  border: 2px solid rgb(189, 0, 57);
+}
+
+.harvest-img img {
+  margin-top: 10px;
+  max-width: 80%;
+}
+
+
+input:focus {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.line {
+  height: 1px;
+}
+
+.text-login {
+  text-align: right;
+  padding-right: 5px;
+  width: 130px;
+  display: inline-block;
+}
+
+.link-yellow {
+  color: rgb(253, 237, 5);
+}
+
+.harvest-img img {
+  max-width: 80%;
+}
+
+.btn-sign {
+  border-radius: 25px;
+  width: 100px;
+  background-color: rgba(255, 255, 255, 0.774);
+  color: rgb(109, 24, 52);
+  font-weight: bold;
+}
+
+.mr-30 {
+  margin-right: 30px;
+}
+
+.is-invalid {
+  border: 2px sold red;
+}
+
+.btn-sign:hover {
+  background-color: #ffc107;
+}
+
+.form-container {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.login {
+  background-color: rgba(255, 255, 255, 0);
+  width: 100%;
+  border-radius: 10px;
+
+}
+
+@media(max-width: 593px) {
+  .text-login {
+    text-align: center;
+    width: 100%;
+    padding-left: 15px;
+  }
+}
+
+@media(max-width: 458px) {
+  .text-login {
+    text-align: center;
+    width: 100%;
+    padding-left: 15px;
+  }
+}
