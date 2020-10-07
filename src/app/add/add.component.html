@@ -1,1 +1,64 @@
-<p>add works!</p>
+<div class="row p-0 container">
+  <div class="col-sm-12 col-md-2 col-xs-12 p-0 position-relative">
+    <app-header></app-header>
+  </div>
+  <div class="col-sm-12 col-md-10 col-xs-12 p-2 text-center  sub-main">
+    <app-message></app-message>
+    <div class="row p-1 mx-auto">
+      <div class="col-sm-12 row text-center scrolling p-1">
+        <div class="col-sm-9 col-md-7 mx-auto ">
+          <div class=" text-center m-2 add">
+            <p class="p-2 bg-primary text-light">EMPLOYEE</p>
+            <form (ngSubmit)="addEmployee(fe)" #fe="ngForm" class="d-flex flex-column p-2">
+              <span class="font-weight-bold">Name:</span>
+              <input type="text" name="name" minlength="3" value="" class="mb-1" autocomplete="off" ngModel required />
+              <sub>(Minimum 3 letters)</sub><br>
+              <span class="font-weight-bold">Lastname:</span>
+              <input type="text" minlength="3" name="lastName" value="" class="mb-1" autocomplete="off" ngModel
+                required />
+              <sub>(Minimum 3 letters)</sub><br>
+              <span class="font-weight-bold">Phone:</span>
+              <input type="text" name="phone" value="" class="mb-1" autocomplete="off" ngModel pattern="^[0-9]*$" />
+              <sub>(not required)</sub><br>
+              <input type="submit" [disabled]="!fe.valid  || denySubmit" value="Add" class="btn btn-primary mb-3" />
+            </form>
+          </div>
+        </div>
+
+        <div class="col-sm-9 col-md-7 mx-auto">
+          <div class=" text-center m-2 add">
+            <p class="p-2 bg-primary text-light">MEASUREMENT ACCOUNT</p>
+            <form (ngSubmit)="addSupervizor(fs)" #fs="ngForm" class="d-flex flex-column p-2">
+              <span class="font-weight-bold">Supervizor</span>
+              <input type="text" name="supervizor" value="" minlength="3" class="my-2" autocomplete="off" ngModel
+                required />
+              <sub>(Minimum 3 letters)</sub><br>
+              <span class="font-weight-bold">Email</span>
+              <input type="email" name="email" value="" minlength="5" class="my-2" autocomplete="off" ngModel
+                required pattern='^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$'/>
+              <sub>(Minimum 5 letters)</sub><br>
+              <span class="font-weight-bold">Password</span>
+              <input type="password" name="password" minlength="5" value="" class="my-2" autocomplete="off" ngModel
+                required />
+              <sub>(Minimum 5 letters)</sub><br>
+              <input type="submit" [disabled]="!fs.valid || denySubmit" value="Add" class="my-2 btn btn-primary" />
+            </form>
+          </div>
+        </div>
+
+        <div class="col-sm-9 col-md-7 mx-auto">
+          <div class=" text-center m-2 add">
+            <p class="p-2 bg-primary text-light">VARIETY</p>
+            <form (ngSubmit)="addVariety(fv)" #fv="ngForm" class="d-flex flex-column p-2">
+              <span class="font-weight-bold">Variety</span>
+              <input type="text" required name="variety" value="" minlength="3" class="my-2" autocomplete="off"
+                ngModel />
+              <sub>(Minimum 3 letters)</sub><br>
+              <input type="submit" [disabled]="!fv.valid  || denySubmit" value="Add" class="my-2 btn btn-primary" />
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
