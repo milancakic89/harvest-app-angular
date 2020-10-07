@@ -1,1 +1,22 @@
-<p>sub-header works!</p>
+<div class="header bg-primary pt-2 m-0" *ngIf="isLogged">
+  <a class="h6 farming text-light text-decoration-none" href="/">User: {{user}}</a>
+  <div class=" ml-3 " (click)="toggleMenu()" [ngClass]="!menuOpened ? 'menu-collapsed' : 'menu-opened'">
+    <span class="colapse-menu" #menu></span>
+  </div>
+
+  <br>
+  <ul class="list-group list-group-vertical p-0 m-0" [ngClass]="menuOpened ? 'opened' : 'closed'">
+    <br>
+    <li class="list-group-item bg-primary px-0" routerLinkActive="active__route" [routerLink]="['/measure']">
+      <a class="list-group-link text-light text-decoration-none">Measurement</a>
+    </li>
+    <li class="list-group-item bg-primary px-0" routerLinkActive="active__route" [routerLink]="['/barcode']">
+      <a class="list-group-link text-light text-decoration-none">Barcode Scaning</a>
+    </li>
+    <li class="list-group-item bg-warning px-0" routerLinkActive="active__route" (click)="logout()">
+      <a class="list-group-link text-light text-decoration-none">Logout</a>
+    </li>
+  </ul>
+
+</div>
+<div class="mb-3"></div>
