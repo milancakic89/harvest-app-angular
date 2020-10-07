@@ -12,6 +12,7 @@ import { AnalysesComponent } from './analyses/analyses.component';
 import { BaseComponent } from './base/base.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { EmployeeComponent } from './employees/employee/employee.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { EmployeeComponent } from './employees/employee/employee.component';
     AnalysesComponent,
     BaseComponent,
     EmployeesComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule
