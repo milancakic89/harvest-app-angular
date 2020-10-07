@@ -1,1 +1,31 @@
-<p>employees works!</p>
+<div class="row p-0 container">
+  <div class="col-sm-12 col-md-2 col-xs-12 p-0 position-relative">
+    <app-header></app-header>
+  </div>
+  <div class="col-sm-12 col-md-10 col-xs-12 p-2 text-center sub-main">
+    <div class=" mx-auto p-2 message">
+      <app-message></app-message>
+    </div>
+    <div>
+      <h3>Employees</h3>
+    </div>
+    <div class="loader" *ngIf="!employeesData"></div>
+    <table class="w-75 mx-auto" *ngIf="employeesData">
+      <tr class="border border-secondary">
+        <th class="p-2">Name</th>
+        <th class="p-2">Lastname</th>
+        <th class="p-2">Phone</th>
+        <th class="p-2">Action</th>
+      </tr>
+      <tr class="border border-secondary p-2" *ngFor="let employee of employeesData?.employees">
+        <td class="border border-secondary p-2">{{employee.name}}</td>
+        <td class="border border-secondary p-2">{{employee.lastName}}</td>
+        <td class="border border-secondary p-2">{{employee.phone}}</td>
+        <td class="border border-secondary p-2">
+          <button class="btn btn-warning" [routerLink]="['employee._id']" (click)="menageEmployee($event)" type="button"
+            value="{{employee._id}}">Manage</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
