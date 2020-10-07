@@ -1,0 +1,5 @@
+.help {
+  max-height: 650px;
+  overflow-y: auto;
+  max-width: 100%;
+}

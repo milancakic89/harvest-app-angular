@@ -1,1 +1,47 @@
-<p>help works!</p>
+<div class="row p-0 container">
+  <div class="col-sm-12 col-md-2 col-xs-12 p-0 position-relative">
+    <app-header></app-header>
+  </div>
+  <div class="col-sm-12 col-md-10 col-xs-12 p-2 sub-main">
+    <div class="row p-3  help ">
+      <div class="col-sm-12 mx-auto">
+        <h1>Help guide</h1>
+        <p>The main purpose of this application is to track data for farmed goods by printing barcodes and attaching
+          them to boxes that will be used
+          for farming. Since more than one person can farm, barcodes are printed with some additional information.
+          Those information are usefull once the barcode is scanned at measurement point. They provide following
+          information:</p>
+        <ul>
+          <li>Employee that box belongs to.</li>
+          <li>Sector where it was farmed.</li>
+          <li>Variety that is inside the box</li>
+          <li>Date of printing</li>
+        </ul>
+        <p>Therefore, In order to print first barcode, you must have at least one of each:</p>
+        <ul>
+          <li>Employee</li>
+          <li>Variety</li>
+          <li>Both can be created by clicking <a routerLink="/add">HERE</a></li>
+          <li>Sector is required also, but it can be provided from <a routerLink="/harvest">HARVEST</a> directly</li>
+        </ul>
+        <p>With those information box is ready to be farmed to. Once farmed, box then goes for measurement.
+          Measurement is done by scanning the barcode, and measuring the weight of the box.
+          In order to measure, you must have the following:</p>
+        <ul>
+          <li>Measurement account, can be created by clicking <a routerLink="/add">HERE</a></li>
+          <li>Person to do the measurement</li>
+        </ul>
+        <p>In order to measure, you must login with measurement account details that you have previously created</p>
+        <p>Measurement account leads you to second part of this application, currently not available.</p>
+        <p>This second part of application is focused on measurement only. It provides the following:</p>
+        <ul>
+          <li>All boxes generated in HARVEST</li>
+          <li>Filtering boxes</li>
+          <li>Scanning boxes barcodes</li>
+          <li>Entering the weight amount</li>
+          <li>Switching boxes to different employee if needed</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
