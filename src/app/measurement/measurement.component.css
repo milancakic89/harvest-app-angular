@@ -1,0 +1,52 @@
+.barcodes {
+  height: auto;
+  min-height: 400px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.filter {
+  text-transform: uppercase;
+  min-width: 220px;
+}
+
+.boxItem {
+  width: 150px;
+  display: inline-block;
+  padding: 10px;
+  height: 45px;
+  max-height: 50px;
+}
+
+@media (max-width: 386px) {
+  .boxItem {
+    width: 87%;
+    display: block;
+    padding: 10px;
+    margin: 0 auto;
+    height: 45px;
+    max-height: 50px;
+  }
+}
+
+@media (min-width: 621px) and (max-width: 768px) {
+  .barcodes {
+    height: auto;
+    min-height: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+}
+
+@media(max-width: 620px) {
+  .barcodes {
+    height: auto;
+    min-height: 250px;
+    max-height: 335px;
+    overflow-y: auto;
+  }
+}

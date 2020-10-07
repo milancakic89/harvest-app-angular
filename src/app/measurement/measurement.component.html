@@ -1,1 +1,43 @@
-<p>measurement works!</p>
+<div class="row p-0 container">
+  <div class="col-sm-12 col-md-2 col-xs-12 p-0 position-relative">
+    <app-sub-header></app-sub-header>
+  </div>
+  <div class="col-sm-12 col-md-10 col-xs-12 p-2 sub-main">
+
+    <div>
+      <app-message></app-message>
+    </div>
+    <div class="text-right p-3">
+      <a class="btn btn-warning" [routerLink]="['total']">TOTAL</a>
+    </div>
+    <div>
+      <form (ngSubmit)="filter(f)" #f="ngForm" class="inline m-2">
+        <span>Search</span><br>
+        <input type="text" value="" name="filter" autocomplete="off" ngModel placeholder="FILTER: AAA"
+          class="mr-2 border border-secondary filter" />
+        <button class="btn btn-primary mb-1" type="submit">Find</button>
+      </form>
+      <form (ngSubmit)="filterEmployee(fe)" #fe="ngForm" class="inline m-2">
+        <span>Search by employee</span><br>
+        <select class="mr-2 filter" name="employee" ngModel required>
+          <option Value="all">Show All</option>
+          <option value="{{employee._id}}" *ngFor="let employee of measureData?.employees">{{employee.name}}
+          </option>
+        </select>
+        <button class="btn btn-primary mb-1" type="submit" [disabled]="!fe.valid">Find</button>
+      </form>
+
+    </div>
+    <hr>
+    <div class="loader" *ngIf="!measureData">Loading...</div>
+    <div class=" border  border-secondary barcodes text-center" *ngIf="measureData">
+      <div class="m-3 boxItem" *ngFor="let boxItem of measureData?.boxes"
+        [ngClass]="boxItem.amount > 0 ? 'bg-success' : 'bg-dark'">
+        <a routerLink="{{boxItem.box}}">
+          <p class="text-center  text-light">{{boxItem.box}}</p>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
