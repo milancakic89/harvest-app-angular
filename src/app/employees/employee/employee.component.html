@@ -1,1 +1,58 @@
-<p>employee works!</p>
+<div class="row p-0 container">
+  <div class="col-sm-12 col-md-2 col-xs-12 p-0 position-relative">
+    <app-header></app-header>
+  </div>
+  <div class="col-sm-12 col-md-10 col-xs-12 p-2 text-center  sub-main">
+    <div class=" mx-auto p-2 message">
+      <div>
+        <app-message></app-message>
+      </div>
+    </div>
+    <div class="row p-2">
+      <div class="col-sm-7 mx-auto">
+        <h1 class="text-center">{{employeeData?.picked.name}} {{employeeData?.picked.lastName}}</h1>
+        <hr>
+      </div>
+      <div class="col-sm-7 p-2 mx-auto border border-dark">
+        <p>Creation Date: {{employeeData?.picked.creationDate}}</p>
+        <p>Boxes: {{employeeData?.boxes}}</p>
+        <input type="hidden" #fromWho value="{{employeeData?.picked._id}}" />
+        <hr>
+        <div class="col-sm-12" *ngIf="employeeData?.boxes > 0">
+          <p class="p-1 bg-warning" *ngIf="employeeData?.employees.length > 0">This employee has (
+            {{employeeData?.boxes}}
+            ) boxes asigned. In case of deletition,
+            boxes must be transfered first</p>
+          <div *ngIf="employeeData?.employees.length <= 0">
+            <p class="p-1 bg-warning">This employee has (
+              {{employeeData?.boxes}}
+              ) boxes asigned. In case of deletition,
+              boxes must be transfered first. Since this is the only employee, make sure to create one first
+              in order to transfer</p>
+            <a routerLink="/add" class="btn btn-primary">Add New Employee</a>
+          </div>
+
+          <div *ngIf="employeeData?.employees.length > 0">
+            <span>Transfer to:</span><br>
+            <select class="p-2 my-2 w-50">
+              <option *ngFor="let employee of employeeData?.employees" #transferTo value="{{employee._id}}">
+                {{employee.name}}</option>
+            </select>
+            <button class="btn btn-primary mx-2 mb-1" (click)="transfer()">Transfer</button><br>
+          </div>
+        </div>
+        <div class="col-sm-12 mx-auto" *ngIf="employeeData">
+          <p *ngIf="employeeData?.boxes <= 0" class="bg-success p-1 text-light">This employee has no boxes asigned,
+            you
+            can remove
+            employee safely</p>
+        </div>
+        <div class="col-sm-12 mx-auto">
+          <button class="btn btn-danger m-2" *ngIf="employeeData?.boxes <= 0" (click)="deleteEmployee()">Delete</button>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
