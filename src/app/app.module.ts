@@ -7,6 +7,7 @@ import { SignupComponent } from './signup/signup.component';
 import { MeasurementComponent } from './measurement/measurement.component';
 import { MessageComponent } from './message/message.component';
 import { AddComponent } from './add/add.component';
+import { HarvestComponent } from './harvest/harvest.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { AddComponent } from './add/add.component';
     SignupComponent,
     MeasurementComponent,
     MessageComponent,
-    AddComponent
+    AddComponent,
+    HarvestComponent
   ],
   imports: [
     BrowserModule
