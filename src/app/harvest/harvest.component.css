@@ -1,0 +1,69 @@
+.boxes__inputs {
+  width: 95%;
+  max-width: 250px;
+  min-width: 30px;
+  min-height: 40px;
+  border: 2px solid rgb(215, 197, 223);
+  border-radius: 5px;
+  color: rgb(99, 98, 98);
+  text-transform: uppercase;
+}
+
+.barcode img {
+  width: 100%;
+}
+
+.barcode {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 100px;
+  flex-wrap: wrap;
+  max-height: 300px;
+  border-bottom: 1px solid black;
+  overflow-y: auto;
+}
+
+.disapear {
+  opacity: 1;
+  color: #fff;
+  height: 40px;
+}
+
+@keyframes disapear {
+  0% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.barcode-row {
+  min-width: 150px;
+  max-width: 30%;
+  margin: 10px;
+}
+
+.spinner {
+  background-color: rgb(208, 233, 70);
+  color: black;
+  font-size: 18px;
+}
+
+.boxes {
+  max-height: 80px;
+}
+
+.message {
+  max-height: 70px;
+}
+
+.row-fix {
+  max-height: 550px;
+}

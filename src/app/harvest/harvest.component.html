@@ -1,1 +1,92 @@
-<p>harvest works!</p>
+<div class="row p-0 container">
+  <div class="col-sm-12 col-md-2 col-xs-12 p-0 position-relative">
+    <app-header></app-header>
+  </div>
+  <div class="col-sm-12 col-md-10 col-xs-12 text-center p-0 sub-main">
+    <div class="m-2 text-center row">
+      <div class=" mx-auto p-2 col-sm-12">
+        <app-message></app-message>
+      </div>
+      <div class="mx-auto p-2 col-sm-12" *ngIf="fetchingInitData">
+        <div class="loader">Fetching...</div>
+      </div>
+      <form class="row mx-auto" (ngSubmit)="submit(f)" #f="ngForm" *ngIf="!fetchingInitData">
+        <div class="col-sm-4 text-center">
+          <span>Filter</span><br>
+          <input class="boxes__inputs  p-1" minlength="3" ngModel type="text" value="DDD" placeholder="AAA"
+            name="filter" required /><br>
+          <sup>(requires 3 letters)</sup><br>
+          <span>Date (day)</span><br>
+          <input class="boxes__inputs  p-1" type="number" [(ngModel)]="currentDate" value="" #date
+            placeholder="{{currentDate}}" name="date" required pattern="^[1-9]+[0-9]*$" /><br>
+          <sup>(required)</sup><br>
+        </div>
+        <div class="col-sm-4 text-center">
+          <span>Sector</span><br>
+          <input class="boxes__inputs  p-1" type="number" ngModel value="1" placeholder="1" name="sector" /><br>
+          <sup>(preferable)</sup><br>
+
+          <span>Variety</span><br>
+          <select name="variety" ngModel class="p-1 boxes__inputs" required>
+            <option *ngFor="let variety of varietyArray" selected value="{{variety.variety}}">{{variety.variety}}
+            </option>
+          </select><br>
+          <sup>(required)</sup><br>
+        </div>
+        <div class=" col-sm-4 text-center">
+          <span>Employee</span><br>
+          <select name="employee" ngModel="{{selected?.name}}" value="Select" class="p-1 boxes__inputs" required>
+            <option *ngFor="let employee of employees" selected #s value="{{employee.name}}">{{employee.name}}
+            </option>
+          </select><br>
+          <sup>(required)</sup><br>
+          <span>Boxes</span><br>
+          <select name="boxes" ngModel="1" class="p-1 boxes__inputs" required>
+            <option selected value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="40">40</option>
+            <option value="50">50</option>
+          </select><br>
+          <sup>(required)</sup><br>
+        </div><br>
+        <div class="text-center col-sm-12">
+          <div class=" mx-auto p-1 text-center">
+
+            <button class="btn btn-primary my-3 mx-auto" [disabled]="!f.valid || date.value > 31" type="submit"
+              *ngIf="!fetchingBarcodes">PRINT</button><br>
+            <hr>
+            <p class="h5 bg-warning p-2">NOTE: Previously unprinted boxes will also be shown</p>
+          </div>
+          <div class="loader" *ngIf="!fetched && fetchingBarcodes">Fetching...</div>
+        </div>
+      </form><br>
+      <div class="col-sm-12 text-center m-1" *ngIf="fetched && boxesArray.length > 0">
+        <button class="btn btn-secondary mt-1" (click)="printBarcodes()">Print Barcodes</button><br>
+        <button class="btn btn-primary mt-1" *ngIf="printed" (click)="confirmPrinted()">Confirm Printed</button>
+      </div>
+      <div class="text-center w-100  pb-3">
+        <div class="barcode text-center" #barcodes>
+          <div class="barcode-row border border-dark p-1"
+            style="display: inline-block; border: 1px solid black; max-width: 150px;min-width: 140px; min-height: 95px; margin: 10px; padding: 10px;"
+            *ngFor="let box of boxesArray">
+            <p>{{box.employee}}</p>
+            <img style="width: 100%; max-width: 130px;"
+              src="https://barcode.tec-it.com/barcode.ashx?data={{box.box}}&code=Code128&multiplebarcodes=false&translate-esc=false&unit=Fit&dpi=96&imagetype=Gif&rotation=0&color=%23000000&bgcolor=%23ffffff&codepage=&qunit=Mm&quiet=0"
+              alt="Barcode" />
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
