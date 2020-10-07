@@ -1,54 +1,42 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Service } from '../app.service';
-import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { BASE_URL } from '../base-url';
 
+
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  selector: 'app-login-form',
+  templateUrl: './login-form.component.html',
+  styleUrls: ['./login-form.component.css']
 })
-export class SignupComponent {
+export class LoginFormComponent implements OnInit {
 
-  submiting = false;
+  showLoad = false;
   constructor(private http: HttpClient,
-    private service: Service,
-    private router: Router) { }
+    private service: Service) { }
 
-  submit(form: NgForm) {
-    if (!form.valid) {
-      return;
+  ngOnInit(): void {
+    if (localStorage.getItem('token') && localStorage.getItem('expiresIn')) {
+      this.service.success.emit(true);
+      this.service.emitMessage.emit('Trying auto login');
+      this.service.tryAutoLogin();
     }
-    const name = form.value.name;
+  }
+  submit(form: NgForm) {
+    this.showLoad = true;
     const email = form.value.email;
     const password = form.value.password;
-    const repeatPassword = form.value.repeatPassword;
-    if (password !== repeatPassword) {
-      this.service.emitMessage.emit('Password fields do not match');
-      return;
-    }
-    this.submiting = true;
-    this.http.post(BASE_URL.getBaseUrl() + '/signup', { email: email, password: password, name: name })
-      .subscribe((user: { success: boolean, message: string }) => {
-        this.submiting = false;
+    this.http.post(BASE_URL.getBaseUrl() + '/login', { email: email, password: password })
+      .subscribe((user: { token: string, message: string, success: boolean, expiresIn: string, admin: boolean, user: string }) => {
+        this.showLoad = false;
         if (user.success) {
           this.service.success.emit(true);
-          this.service.emitMessage.emit(user.message)
-          setTimeout(() => {
-            return this.router.navigate(['/'])
-          }, 1500)
-
-        } else {
-          this.service.success.emit(false);
-          return this.service.emitMessage.emit(user.message);
+          this.service.emitMessage.emit(user.message);
+          return this.service.onLoggedIn(user.token, user.admin, user.expiresIn, user.user);
         }
-
-      },
-        error => {
-          this.service.success.emit(true);
-          this.service.emitMessage.emit(error)
-        })
+        this.service.success.emit(false);
+        this.service.emitMessage.emit(user.message);
+      });
   }
 }
