@@ -1,5 +1,5 @@
 export class BASE_URL {
   static getBaseUrl() {
-    return 'https://farming-harvesting.herokuapp.com';
+    return 'https://harvest-app-66x0.onrender.com';
   }
 }
